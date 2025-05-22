@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Buddy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-particles" id="particles"></div>
+  
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <h1>Text Buddy Pro</h1>
+        <div class="subtitle">AI-powered text processing with style</div>
+      </div>
+    </div>
+    
+    <div class="content">
+      <div class="input-section">
+        <div class="input-wrapper">
+          <textarea 
+            id="input-text" 
+            class="input-text" 
+            placeholder="Type or paste your text here for intelligent processing..."
+            maxlength="5000"
+          ></textarea>
+          <div class="char-counter">
+            <span id="char-count">0</span>/5000
+          </div>
+        </div>
+      </div>
+      
+      <div class="options-section">
+        <div class="section-title">Choose your action</div>
+        <div class="option-group">
+          <label class="radio-option selected" data-action="translate">
+            <input type="radio" name="action" value="translate" checked>
+            <div class="radio-custom"></div>
+            <span>🌐 Translate</span>
+          </label>
+          <label class="radio-option" data-action="correct">
+            <input type="radio" name="action" value="correct">
+            <div class="radio-custom"></div>
+            <span>✏️ Grammar</span>
+          </label>
+          <label class="radio-option" data-action="prompt">
+            <input type="radio" name="action" value="prompt">
+            <div class="radio-custom"></div>
+            <span>⚡ Custom</span>
+          </label>
+        </div>
+        
+        <div id="translation-options" class="translation-options">
+          <div class="form-group">
+            <label class="form-label" for="target-language">Target language</label>
+            <select id="target-language" class="select">
+              <option value="es">🇪🇸 Spanish</option>
+              <option value="fr">🇫🇷 French</option>
+              <option value="de">🇩🇪 German</option>
+              <option value="it">🇮🇹 Italian</option>
+              <option value="pt">🇵🇹 Portuguese</option>
+              <option value="ru">🇷🇺 Russian</option>
+              <option value="zh">🇨🇳 Chinese (Simplified)</option>
+              <option value="ja">🇯🇵 Japanese</option>
+              <option value="ko">🇰🇷 Korean</option>
+              <option value="ar">🇸🇦 Arabic</option>
+              <option value="hi">🇮🇳 Hindi</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="prompt-options" class="prompt-options hidden">
+          <div class="form-group">
+            <label class="form-label" for="custom-prompt">Describe your task</label>
+            <input 
+              type="text" 
+              id="custom-prompt" 
+              class="input-field" 
+              placeholder="e.g., Summarize this text, Make it more formal, Extract key points..."
+            >
+          </div>
+        </div>
+      </div>
+      
+      <button id="process-button" class="process-button">
+        <span class="icon">🚀</span>
+        <span id="button-text">Process Text</span>
+      </button>
+      
+      <div class="output-section">
+        <div class="output-header">
+          <span class="output-title">Result</span>
+          <button id="copy-button" class="copy-button">
+            <span class="copy-icon">📋</span>
+            <span id="copy-text">Copy</span>
+          </button>
+        </div>
+        <div id="output-container" class="output-container">
+          <div class="output-placeholder">
+            Your brilliantly processed text will appear here
+          </div>
+        </div>
+      </div>
+
+      <div id="error-container"></div>
+    </div>
+    
+    <div class="footer">
+      <p>Powered by Gemini API</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

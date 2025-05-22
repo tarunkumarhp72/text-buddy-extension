@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Text Buddy - AI Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered text processing with translation, grammar check, and custom prompts",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:2000/*",
+    "http://127.0.0.1:2000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["*.png", "*.jpg", "*.gif", "*.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Text Buddy"
+  }
+}
